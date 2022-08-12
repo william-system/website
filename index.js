@@ -1,6 +1,6 @@
 //Config do server
 const app = require("./config/server");
-const formulas = app.app.utils.Formulas;
+const formulas = app.utils.Formulas;
 
 
 //Tanto WebSocket quanto HTTP serao lidas
