@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>App</title>
+<style>
+  p{
+    font-weight: bold;
+    width: 300px;
+    font-family: 'Helvetica';
+  }
+
+  output{
+    font-family: 'Arial';
+  }
+
+  .mesesAlerta{
+    font-weight: bolder;
+    color: red;
+  }
+
+  .mesesAlertaH1H2{
+    font-weight: bolder;
+    color: darkred;
+  }
+
+  .mesesNormal{
+    font-weight: bold;
+    color: green;
+  }
+</style>
+</head>
+
+<body>
+<h1>Calculando gasto da lavadora: </h1>
+<h2>Resultados do calculo</h2>
+<p>Nome do aluno: <output><%= nomeAluno %></output>.<p>
+<p>Gasto da lavadora: <output><%= gastoLavadora %>W ANUAL</output>.<p>
+<p>Média por mês: <output><%= mediaPorMes %></output>.<p>
+<p>Média semanal: <output><%= mediaSemanal %></output>.<p>
+<p class='mesesAlertaH1H2'>Mês que mais consumiu: <output class='mesesAlerta'><%= mesMaiorConsumo %></output>.</p>
+<p>Mês que menos consumiu: <output class='mesesNormal'><%= mesMenorConsumo %></output>.</p>
+<h2 class='mesesAlertaH1H2'>Meses com maior consumo</h2>
+<ul class='mesesAlerta'>
+  <% for(let i = 0 ; i < mesesMaisGastou.length ; i++) { %>
+      <li><%= mesesMaisGastou[i]%></li>
+  <% } %>
+</ul>
+
+<h2>Meses com menos consumo</h2>
+<ul>
+  <% for(let i = 0 ; i < mesesMenosGastou.length ; i++) { %>
+      <li><%= mesesMenosGastou[i]%></li>
+  <% } %>
+</ul>
+
+</body>
+
+<script>
+	
+
+</script>
+
+</html>

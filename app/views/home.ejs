@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>App</title>
+<style>
+  #valores{
+    width: 500px;
+    margin-bottom: 5px;
+  }
+
+  input[type=submit]{
+    width: 150px;
+    padding: 5px;
+    background: darkcyan;
+    color: white;
+    font-weight: bold;
+  }
+
+  input{
+    padding: 5px;
+  }
+
+  #valores input{
+    width: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  #valores label{
+    width: 100%;
+  }
+</style>
+</head>
+
+<body>
+<h1>Calculando gasto da lavadora</h1>
+
+<form action="/calcular" method="GET">
+  <label for="fnome">Nome do aluno:</label><br>
+  <input type="text" id="fnome" name="fnome"><br>
+  <br>
+  <h2>Meses e os seus Valores</h2>
+  <div id="valores">
+     
+  </div>
+
+  <input type="submit" value="Enviar e Calcular">
+</form>
+
+</body>
+
+<script>
+	 const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+   for(let i = 0 ; i < meses.length ; i++){
+      let elemento = document.createElement('input');
+      elemento.type = 'text';
+      elemento.id = 'id' + String(i);
+      elemento.name = 'n' + String(i);
+      elemento.placeholder = String(meses[i]);
+      elemento.class = 'diaMes';
+
+      let label = document.createElement('label');
+      label.for = elemento.name;
+      label.value = String(meses[i]);
+      label.id = 'lbid' + String(i);
+      label.name = 'n' + String(i);
+      label.placeholder = String(meses[i]);
+      label.class = 'labelMes';
+
+      //Coloca o label
+      document.getElementById('valores').appendChild(label);
+
+      //Coloca o mes
+      document.getElementById('valores').appendChild(elemento);
+   }
+
+</script>
+
+</html>
