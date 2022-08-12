@@ -17,12 +17,12 @@ const app = express();
 //Usar EJS como engine
 app.set("view engine", "ejs");
 //Pasta das views
-app.set("views", "~/app/views");
+app.set("views", "app/views");
 
 
 //Configurar o midle-ware
 //Arquivos estaticos(lado do cliente)
-app.use( express.static("~/app/public") );
+app.use( express.static("app/public") );
 
 //Body parser
 //Para quando houver um post do formulario em alguma requisicao, podemos recuperar os dados via JSON a partir da propiedade body 
@@ -33,10 +33,10 @@ app.use( bodyParser.urlencoded( {extended: true} ) );
 
 
 //Auto load de modulos com o consign para o obj app
-consign().include("~/app/routes")
-         .then("~/app/models")
-         .then("~/app/controllers")
-         .then("~/app/utils")
+consign().include("app/routes")
+         .then("app/models")
+         .then("app/controllers")
+         .then("app/utils")
 
          //Insere dentro do objeto app
          .into(app)
